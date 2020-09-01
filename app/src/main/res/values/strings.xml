@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Gamificacao</string>
+    <string name="textoA">Hi, my name is Rob Willian </string>
+
+    <string name="textoB">
+        I"'"m excited for you to use me, in a good way. Haha !!
+This challenge will test your knowledge of technical terms used in the field of information technology.
+Here we go!
+    </string>
+
+    <string name="TitloCompleteAsFrases">Complete the sentences</string>
+    <string name="ContentDescriptionTexto"> Texto</string>
+    <string name="ex01"> Find the correct word or abbreviation in the text.  </string>
+    <string name="ex02"> Macth the groups of verbs below with their general meaning from the box.  </string>
+    <string name="opex02">
+        <item>Public ;</item>
+        <item>Pop-up ;</item>
+        <item>Boolean ;</item>
+        <item>Ping;</item>
+        <item>Array</item>
+    </string>
+    <string name="aex01">1.When referring to programming, an array is a group
+                of related data values (called elements) that are
+                grouped together. All of the array elements must
+                be the same data type. The examples below show how
+                an array is defined and called in Perl and JavaScript.
+    </string>
+    <string name="bex01">
+            2.Developed by the English mathematician and computer pioneer George Boole,
+        a Boolean, bool, or Boolean expression is a value that is either TRUE or FALSE.
+    </string>
+    <string name="cex01">
+        3.In general, public refers to anything that is out in the open for everyone to see.
+    </string>
+    <string name="dex01">
+        4.Ping é um utilitário desenvolvido pela primeira vez por Michael Muss em 1983,
+        que é usado para verificar se um pacote de dados de rede pode ou não ser distribuído para um endereço sem erros.
+        O utilitário ping é comumente usado para verificar erros de rede.
+    </string>
+    <string name="eex01">
+        5.Term used to describe a window that appears on top of all other Windows.
+        This term became a well-known term with the advent of intrusive and non-intrusive Internet pop-up ads.
+        These ads became increasingly annoying as this form of advertising started to become more popular with many web pages.
+    </string>
+    <string name="confirmar">Submit</string>
+    <string name="Total">Total</string>
+    <string name="txx">
+        THE INTERNET originated in the early 1970s when the United States wanted to make sure that people could communicate after  a nuclear war. This needed a free and independent communication network without a centre and it led to а network of computers that could send each other e-mail through cyberspace. Tim Berners-Lee invented the World Wide Web (WWW) when he discovered a way to jump to different files on his computer using the random,or unplanned, links between them. He then wrote a simple coding system, called HTML (Hyper Text Markup Language), to create links to files on any computer connected to the network. This was possible because each file had an individual address, or URL (Uniform Resource Locator). He then used a set of transfer rules, called HTTP (Hyper Text Transfer Protocol), to link Web files together across the Internet. Berners-Lee also invented the world s first browser. This lets you locate and view Web pages and also navigate from one link to another. The WWW became available to everyone in 1991 and the number of Internet users grew from 600,000 to 40 million in five years. Today, that number is much larger and there are now many browsers that provide Web pages, information and other services. You can also do research, download music files, play interactive games, shop, talk in chat rooms and send and receive e-mail on the WWW.
+    </string>
+    <string name="title_activity_pontuacao">Pontuacao</string>
+</resources>
