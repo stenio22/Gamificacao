@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     Button botaoSim,botaoNao;
-
+    int mapa = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MapaAtividades.class);
+                intent.putExtra("mapa", mapa);
+                //intent.putExtra("voltar", 1);
+                //intent.putExtra("totalPontos", 53);
                 startActivity(intent);
-                finish();
 
             }
         });

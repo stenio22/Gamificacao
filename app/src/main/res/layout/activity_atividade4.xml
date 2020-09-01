@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Atividade4"
+    >
 
 
     <LinearLayout
@@ -44,7 +46,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/londrina_solid"
             android:text="@string/aex01"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -54,7 +56,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
         <TextView
             android:id="@+id/bex01"
@@ -63,7 +72,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/londrina_solid"
             android:text="@string/bex01"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -73,7 +82,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
         <TextView
             android:id="@+id/cex01"
@@ -82,7 +98,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/londrina_solid"
             android:text="@string/cex01"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -92,7 +108,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
         <TextView
             android:id="@+id/dex01"
@@ -101,7 +124,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/londrina_solid"
             android:text="@string/dex01"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -111,7 +134,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
         <TextView
             android:id="@+id/eex01"
@@ -120,7 +150,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/londrina_solid"
             android:text="@string/eex01"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -130,18 +160,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR4"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
         <Button
-            android:id="@+id/btConfirmaEx01"
+            android:id="@+id/btVerificaResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:background="@color/statusBarRoxo"
             android:fontFamily="@font/londrina_solid"
             android:onClick="confirma"
-            android:text="@string/confirmar"
+            android:text="Ok"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btConfirmaEx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/statusBarRoxo"
+            android:fontFamily="@font/londrina_solid"
+            android:onClick="alertaResultado"
+            android:text="@string/confirmar"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </ScrollView>

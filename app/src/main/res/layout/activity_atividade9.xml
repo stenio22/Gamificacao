@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Atividade9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtExercicio1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/londrina_solid"
+            android:text="@string/ex01"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/opExercicio1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/londrina_solid"
+            android:text="COOKIE ; BLUETOOTH ; BIOS ; JAVA SCRIPT ; GATEWAY"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/statusBarRoxo"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/aex01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/londrina_solid"
+            android:text="@string/atv9ex1"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/rex01a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/bex01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/londrina_solid"
+            android:text="@string/atv9ex2"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/rex01b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/cex01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/londrina_solid"
+            android:text="@string/atv9ex3"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/rex01c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/dex01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/londrina_solid"
+            android:text="@string/atv9ex4"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/rex01d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/eex01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/londrina_solid"
+            android:text="@string/atv9ex5"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/rex01e"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/londrina_solid"
+            android:inputType="textPersonName"
+            android:textColor="@color/statusBarRoxo" />
+
+        <ImageView
+            android:id="@+id/imgR4"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/btVerificaResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/statusBarRoxo"
+            android:fontFamily="@font/londrina_solid"
+            android:onClick="confirma"
+            android:text="Ok"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btConfirmaEx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/statusBarRoxo"
+            android:fontFamily="@font/londrina_solid"
+            android:onClick="alertaResultado"
+            android:text="@string/confirmar"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</ScrollView>

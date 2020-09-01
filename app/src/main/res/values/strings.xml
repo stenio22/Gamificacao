@@ -1,51 +1,73 @@
 <resources>
     <string name="app_name">Gamificacao</string>
-    <string name="textoA">Hi, my name is Rob Willian </string>
-
-    <string name="textoB">
-        I"'"m excited for you to use me, in a good way. Haha !!
-This challenge will test your knowledge of technical terms used in the field of information technology.
-Here we go!
-    </string>
-
-    <string name="TitloCompleteAsFrases">Complete the sentences</string>
+    <string name="textoA">" Oi, meu nome é Rob Wilian"</string>
+    <string name="textoB">Que bom que você está aqui!vamos jogar?</string>
+    <string name="TitloCompleteAsFrases">Complete as Frases</string>
     <string name="ContentDescriptionTexto"> Texto</string>
-    <string name="ex01"> Find the correct word or abbreviation in the text.  </string>
-    <string name="ex02"> Macth the groups of verbs below with their general meaning from the box.  </string>
-    <string name="opex02">
-        <item>Public ;</item>
-        <item>Pop-up ;</item>
-        <item>Boolean ;</item>
-        <item>Ping;</item>
-        <item>Array</item>
+    <string name="ex01"> Responda as peguntas com as respostas abaixo indicadas. </string>
+    <string name="opex02">String; Integer; Ping; Array ; Boolean   </string>
+
+    <string name="aex01">
+        é uma estrutura de dados que contém um grupo de elementos. Normalmente, esses elementos são todos do mesmo tipo de dados , como um inteiro ou uma string .
     </string>
-    <string name="aex01">1.When referring to programming, an array is a group
-                of related data values (called elements) that are
-                grouped together. All of the array elements must
-                be the same data type. The examples below show how
-                an array is defined and called in Perl and JavaScript.
-    </string>
+
     <string name="bex01">
-            2.Developed by the English mathematician and computer pioneer George Boole,
-        a Boolean, bool, or Boolean expression is a value that is either TRUE or FALSE.
+    é um tipo de dado primitivo que possui dois valores, que podem ser considerados como 0 ou 1, falso ou verdadeiro.
+
     </string>
+
     <string name="cex01">
-        3.In general, public refers to anything that is out in the open for everyone to see.
+é um tipo de dados usado na programação, como um inteiro e uma unidade de ponto flutuante, mas é usado para representar texto em vez de números.
     </string>
+
     <string name="dex01">
-        4.Ping é um utilitário desenvolvido pela primeira vez por Michael Muss em 1983,
-        que é usado para verificar se um pacote de dados de rede pode ou não ser distribuído para um endereço sem erros.
-        O utilitário ping é comumente usado para verificar erros de rede.
+       é um sinal enviado para um host que solicita uma resposta. Ele serve dois propósitos principais: 1) verificar se o host está disponível e 2) medir quanto tempo a resposta demora.
     </string>
-    <string name="eex01">
-        5.Term used to describe a window that appears on top of all other Windows.
-        This term became a well-known term with the advent of intrusive and non-intrusive Internet pop-up ads.
-        These ads became increasingly annoying as this form of advertising started to become more popular with many web pages.
-    </string>
-    <string name="confirmar">Submit</string>
+    <string name="eex01">é um número inteiro (não uma fração) que pode ser positivo, negativo ou zero.</string>
+    <string name="confirmar">Confirmar</string>
+
     <string name="Total">Total</string>
-    <string name="txx">
-        THE INTERNET originated in the early 1970s when the United States wanted to make sure that people could communicate after  a nuclear war. This needed a free and independent communication network without a centre and it led to а network of computers that could send each other e-mail through cyberspace. Tim Berners-Lee invented the World Wide Web (WWW) when he discovered a way to jump to different files on his computer using the random,or unplanned, links between them. He then wrote a simple coding system, called HTML (Hyper Text Markup Language), to create links to files on any computer connected to the network. This was possible because each file had an individual address, or URL (Uniform Resource Locator). He then used a set of transfer rules, called HTTP (Hyper Text Transfer Protocol), to link Web files together across the Internet. Berners-Lee also invented the world s first browser. This lets you locate and view Web pages and also navigate from one link to another. The WWW became available to everyone in 1991 and the number of Internet users grew from 600,000 to 40 million in five years. Today, that number is much larger and there are now many browsers that provide Web pages, information and other services. You can also do research, download music files, play interactive games, shop, talk in chat rooms and send and receive e-mail on the WWW.
-    </string>
-    <string name="title_activity_pontuacao">Pontuacao</string>
+
+    <string name="title_activity_pontuacao">Pontuação</string>
+    <string name="titulo_inicio">Termos técnicos de informática</string>
+    <string name="content_descricao">imagem de robo inicial</string>
+    <string name="img_mapinha">Imagem do mapa</string>
+    <string name="imagem_robo_mapa">imagem do robo no mapa</string>
+    <string name="titulo_mapa_progresso">Mapa de Progresso</string>
+    <string name="bt_facil">Fácil</string>
+    <string name="bt_medio">Médio</string>
+    <string name="bt_dificil">Dificíl</string>
+    <string name="img_qtd_vidas">imagem de vidas</string>
+    <string name="bt_voltar">Voltar</string>
+    <string name="insira_nome">Insira seu nome</string>
+    <string name="atv9ex1">Programa que funciona como interface entre o hardware e o sistema operacional, indicando os equipamentos existentes e disponíveis para determinadas funções.</string>
+    <string name="atv9ex2">Uma especificação industrial para áreas de redes pessoais sem fio. Provê uma maneira de conectar e trocar informações entre dispositivos como telefones celulares.</string>
+    <string name="atv9ex3">Parte da informação de um usuário, armazenada no browser, que fica disponível para o servidor identificá-la.</string>
+    <string name="atv9ex4">Mecanismo que permite a ponte entre duas redes que trabalham como protocolos diferentes.</string>
+    <string name="atv9ex5">Linguagem de script para publicação na Web, que permite que se insiram instruções simples de programação.</string>
+    <string name="botao_proximo">Próximo </string>
+    <string name="msg_result">Resultado </string>
+    <string name="bt_home_lets_go">Vamos lá </string>
+    <string name="msgSair">Você tem certeza que deseja sair ? </string>
+    <string name="msgAlerta">Alerta! </string>
+    <string name="msgNao">Não </string>
+    <string name="msgSim">Sim </string>
+    <string name="msgReiniciar">Reiniciar Módulo </string>
+    <string name="msgTryAgain">Tente Novamente </string>
+    <string name="msgRetry">Tente Novamente </string>
+    <string name="msgParabens">Parabéns </string>
+    <string name="msgHits">"Êxitos: "</string>
+    <string name="msgNext">Próximo </string>
+    <string name="msgGameOver">Fim de Jogo </string>
+    <string name="msgGamerOL">Fim de jogo! Vidas:</string>
+    <string name="msgYouDie">Você morreu </string>
+    <string name="txt_termosTecnicos">Termos Técnicos</string>
+    <string name="txtJogodaMemoria">Jogo da memória</string>
+    <string name="tt_faq" >Método de pontuação</string>
+    <string name="faq_1">Existe 10 fases e cada fase tem 5 perguntas, cada pergunta vale um ponto, que no total corresponde a 50 pontos.</string>
+    <string name="faq_2" >Caso você erre uma pergunta você perderá uma vida.</string>
+    <string name="faq_3">Caso você volte uma fase seus pontos serão dividido por 2 no final do jogo, para cada vez que voltar.</string>
+    <string name="faq_4">Caso você perca suas vidas o jogo acaba.</string>
+    <string name="faq_5">Caso você reinicie a fase as vidas que você perdeu na mesma fase serão recuperadas se elas não tiverem acabado, mas isso implicará nos seus pontos.
+        No final do jogo o total será dividido por 2 para cada vez que se utilizar a função voltar.</string>
 </resources>

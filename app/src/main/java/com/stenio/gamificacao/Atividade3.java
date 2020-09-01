@@ -7,13 +7,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -24,30 +20,31 @@ public class Atividade3 extends AppCompatActivity {
     ImageView forca;
     Button btA, btB, btC, btD, btE, btF, btG, btH, btI, btJ, btK, btL, btM, btN, btO, btP, btQ, btR, btS, btT, btU, btV, btX, btY, btZ,btW;
     String respostaAtual;
-    int resultadoFinal,totalPontos;
+    int resultadoFinal,totalPontos,total;
     int vidas;
     int vidasCasoRetry;
-
-    String[] pistas = {"Fazer uma cópia de programas ou dados para evitar perda dos mesmos",
+    int mapa = 3;
+    int btvoltarclidado = 0;
+    String[] pistas = {/*"Fazer uma cópia de programas ou dados para evitar perda dos mesmos",
             "Sistema básico de entrada e saída é o programa mais elementar existente no computador.",
             "É um aplicativo cuja função é navegar pelas páginas da internet.",
             " Na informática chamamos de um mal funcionamento do sistema, uma falha de desenvolvimento.",
             "Registrado, protegido por direitos autorais",
-            "Resolver, decifrar, na informática é um programa criado para violar outros programas sem permissão do autor",
+            "Resolver, decifrar, na informática é um programa criado para violar outros programas sem permissão do autor",*/
             "Baixar dados da internet para si",
             "É uma coleção de dados inter-relacionados, representando informações sobre um domínio específico",
             "Programa gratuito, que baixamos da internet",
-            "palavra chave",
+            "Uma palavra que age como a chave para uma cifra ou código.",
             "Rede de computadores, 2 ou mais pc’s interligados trocando informações"
     };
 
     String[] respostas = {
-            "Backup",
+            /*"Backup",
             "BIOS",
             "Browser",
             "Bug",
             "Copyright",
-            "Crack",
+            "Crack",*/
             "Download",
             "Database",
             "Freeware",
@@ -67,15 +64,16 @@ public class Atividade3 extends AppCompatActivity {
         Intent intentReceive = getIntent();
         Bundle param = intentReceive.getExtras();
         if (param != null) {
-            int total = param.getInt("totalPontos");
+            total = param.getInt("totalPontos");
             vidas = param.getInt("vidas");
+            btvoltarclidado = param.getInt("voltar");
             vidasCasoRetry = vidas;
             totalPontos = total;
         }
 
 
-        forca = findViewById(R.id.imgForca);
-        txtPista = findViewById(R.id.txtPistaForca);
+        forca = findViewById(R.id.imgTitulo);
+        txtPista = findViewById(R.id.txtTitulo);
         t1 = findViewById(R.id.t1);
         t2 = findViewById(R.id.t2);
         t3 = findViewById(R.id.t3);
@@ -1486,43 +1484,47 @@ public class Atividade3 extends AppCompatActivity {
         AlertDialog alertDialog;
         alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setCancelable(false);
-        alertDialog.setTitle("Resultado!");
+        alertDialog.setTitle(getString(R.string.msg_result));
 
         if(resultadoFinal == 0) {
             if(vidas == 0){
-                alertDialog.setMessage("GAME OVER - SUAS VIDAS ACABARAM ");
-                alertDialog.setButton("RESTART MODULO", new DialogInterface.OnClickListener() {
+                alertDialog.setMessage(getString(R.string.msgGamerOL) +vidas);
+                alertDialog.setButton(getString(R.string.msgTryAgain), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(getApplicationContext(), Atividade3.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtra("vidas", vidasCasoRetry);
                         startActivity(intent);
                         finish();
                     }
                 });
             }else {
-                alertDialog.setMessage("GAME OVER");
-                alertDialog.setButton("TRY AGAIN", new DialogInterface.OnClickListener() {
+                alertDialog.setMessage(getString(R.string.msgYouDie));
+                alertDialog.setButton(getString(R.string.msgTryAgain), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         vidas--;
                         Intent intent = new Intent(getApplicationContext(), Atividade3.class);
+                        intent.putExtra("voltar", btvoltarclidado);
                         intent.putExtra("vidas", vidasCasoRetry - 1);
                         intent.putExtra("totalPontos", totalPontos);
+                        intent.putExtra("mapa", mapa);
                         startActivity(intent);
                         finish();
                     }
                 });
             }
         }if(resultadoFinal == 1){
-            alertDialog.setMessage("Parabéns");
-            alertDialog.setButton("AVANCE", new DialogInterface.OnClickListener() {
+            alertDialog.setMessage(getString(R.string.msgParabens));
+            alertDialog.setButton(getString(R.string.msgNext), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), MapaAtividades4.class);
+                    Intent intent = new Intent(getApplicationContext(), MapaAtividadesGeral.class);
                     totalPontos = totalPontos + 5;
                     intent.putExtra("totalPontos", totalPontos);
                     intent.putExtra("vidas", vidas);
+                    intent.putExtra("mapa", mapa);
+                    intent.putExtra("voltar", btvoltarclidado);
                     startActivity(intent);
                     finish();
                 }
@@ -1532,6 +1534,33 @@ public class Atividade3 extends AppCompatActivity {
         alertDialog.show();
 
 
+    }
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog alertDialog;
+        alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setCancelable(false);
+        alertDialog.setTitle(getString(R.string.msgAlerta));
+        alertDialog.setMessage(getString(R.string.msgSair));
+
+        alertDialog.setButton(Dialog.BUTTON_NEGATIVE,getString(R.string.msgNao), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                closeOptionsMenu();
+            }
+        });
+
+        alertDialog.setButton(Dialog.BUTTON_POSITIVE,getString(R.string.msgSim), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        alertDialog.show();
     }
 
 }

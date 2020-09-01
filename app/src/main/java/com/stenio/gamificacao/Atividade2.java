@@ -1,6 +1,9 @@
 package com.stenio.gamificacao;
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,16 +17,17 @@ import android.widget.TextView;
 
 public class Atividade2 extends AppCompatActivity {
 
+
     ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
     TextView txtTitulo;
-
+    int mapa = 2;
     int imagemaberta1;
     int imagemaberta2;
     int ativo;
     int passarFase = 0;
-    int total;
+    int total,totalPontos;
     int vidas = 0;
-
+    int btvoltarclidado = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,9 @@ public class Atividade2 extends AppCompatActivity {
         Bundle param = intentReceive.getExtras();
         if (param != null) {
             total = param.getInt("totalPontos");
+            totalPontos = total;
             vidas = param.getInt("vidas");
+            btvoltarclidado = param.getInt("voltar");
         }
 
         img1 = findViewById(R.id.img1);
@@ -49,8 +55,7 @@ public class Atividade2 extends AppCompatActivity {
         img10 = findViewById(R.id.img10);
         img11 = findViewById(R.id.img11);
         img12 = findViewById(R.id.img12);
-        txtTitulo = findViewById(R.id.txtPistaForca);
-
+        txtTitulo = findViewById(R.id.txtTitulo);
 
         imagemX();
         // a combinação sera
@@ -344,18 +349,19 @@ public class Atividade2 extends AppCompatActivity {
     public void imagemX(){
 
 
-        img1.setImageResource(R.drawable.x);
-        img2.setImageResource(R.drawable.x);
-        img3.setImageResource(R.drawable.x);
-        img4.setImageResource(R.drawable.x);
-        img5.setImageResource(R.drawable.x);
-        img6.setImageResource(R.drawable.x);
-        img7.setImageResource(R.drawable.x);
-        img8.setImageResource(R.drawable.x);
-        img9.setImageResource(R.drawable.x);
-        img10.setImageResource(R.drawable.x);
-        img11.setImageResource(R.drawable.x);
-        img12.setImageResource(R.drawable.x);
+        img1.setImageResource(R.drawable.institutofederal);
+        img2.setImageResource(R.drawable.institutofederal);
+        img3.setImageResource(R.drawable.institutofederal);
+        img4.setImageResource(R.drawable.institutofederal);
+        img5.setImageResource(R.drawable.institutofederal);
+        img6.setImageResource(R.drawable.institutofederal);
+        img7.setImageResource(R.drawable.institutofederal);
+        img8.setImageResource(R.drawable.institutofederal);
+        img9.setImageResource(R.drawable.institutofederal);
+        img10.setImageResource(R.drawable.institutofederal);
+        img11.setImageResource(R.drawable.institutofederal);
+        img12.setImageResource(R.drawable.institutofederal);
+
     }
 
     public void taAtivo() {
@@ -379,12 +385,41 @@ public class Atividade2 extends AppCompatActivity {
     public void passarFase() {
 
 
-        Intent intent = new Intent(getApplicationContext(), MapaAtividades3.class);
+        Intent intent = new Intent(getApplicationContext(), MapaAtividadesGeral.class);
         intent.putExtra("totalPontos", total + 5);
         intent.putExtra("vidas", vidas);
+        intent.putExtra("mapa", mapa);
+        intent.putExtra("voltar", btvoltarclidado);
         startActivity(intent);
         finish();
 
+    }
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog alertDialog;
+        alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setCancelable(false);
+        alertDialog.setTitle(getString(R.string.msgAlerta));
+        alertDialog.setMessage(getString(R.string.msgSair));
+
+        alertDialog.setButton(Dialog.BUTTON_NEGATIVE,getString(R.string.msgNao), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                closeOptionsMenu();
+            }
+        });
+
+        alertDialog.setButton(Dialog.BUTTON_POSITIVE,getString(R.string.msgSim), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        alertDialog.show();
     }
 
 }

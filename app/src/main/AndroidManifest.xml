@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Faq"></activity>
+        <activity android:name=".Atividade10" />
+        <activity android:name=".Atividade9" />
+        <activity android:name=".Atividade8" />
+        <activity android:name=".Atividade7" />
+        <activity android:name=".Atividade6" />
+        <activity android:name=".MapaAtividadesGeral" />
+        <activity android:name=".Atividade5" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,12 +32,9 @@
         <activity android:name=".MapaAtividades" />
         <activity android:name=".Atividade1" />
         <activity android:name=".Atividade2" />
-        <activity android:name=".MapaAtividades2" />
-        <activity android:name=".MapaAtividades3" />
-        <activity android:name=".MapaAtividades4" />
         <activity android:name=".Atividade3" />
         <activity android:name=".Atividade4" />
-        <activity android:name=".MapaAtividadeFinal"></activity>
+        <activity android:name=".MapaAtividadeFinal" />
     </application>
 
 </manifest>

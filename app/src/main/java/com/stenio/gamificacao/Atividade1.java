@@ -1,67 +1,61 @@
 package com.stenio.gamificacao;
 
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+
 public class Atividade1 extends AppCompatActivity {
 
-
-    public RadioGroup radioGroup;
-    public TextView textoPergunta;
-    public RadioButton opcaoA;
-    public RadioButton opcaoB;
-    public RadioButton opcaoC;
-    public Button botaoOk;
-
-
-
-    //intenção buscar perguntas e respostas via DB no entanto coloquei como string dentro de vetores
-    String Perguntas[] = {"what is it ?",
-            "what is it ?",
-            "what is it ?",
-            "what is it ?",
-            "what is it ?"};
-
-    String OpcaoA[] = {"Hard Drive",
-            "Screen",
-            "GPU",
-            "Video Card",
-            "RAM memory"};
-
-    String OpcaoB[] = {"Hard Disc",
-            "Monitor",
-            "Processor",
-            "Network card",
-            "ROM memory"};
-
-    String OpcaoC[] = {"Head Fone",
-            "Wide Screen",
-            "Calculator",
-            "Motherboard",
-            "Cache memory"};
-
-
-    int[] listaRespostas = new int[Perguntas.length];
-    int listaGabarito[] = {1, 2, 2, 3, 1};
+    int mapa = 1;
+    TextView titulo;
+    ImageView imgVerificar,imgTitulo;
+    Button btOk;
+    RadioButton opcaoA,opcaoB,opcaoC;
+    RadioGroup radio;
+    int posicaoPergunta = 0;
     int respostasCorretas = 0;
-    int numeroPergunta = 0;
-    int nivel;
-    int vidasCasoRetry;
-    int valorNivel = 0;
-    int erros = 0;
+    int indice = 0;
+    int btvoltarclidado = 0;
 
+    String pergunta1 = "What is it?";
+//    String pergunta2 = "";
+//    String pergunta3 = "";
+//    String pergunta4 = "";
+//    String pergunta5 = "";
+
+    String resposta1a = "Hard Drive";
+    String resposta1b = "Hard Disc";
+    String resposta1c = "Hard Burn";
+
+    String resposta2a = "Touch Screen";
+    String resposta2b = "Monitor";
+    String resposta2c = "Wide Screen";
+
+    String resposta3a = "GPU";
+    String resposta3b = "Processor";
+    String resposta3c = "Calculator";
+
+    String resposta4a = "Video Card";
+    String resposta4b = "Dashboard";
+    String resposta4c = "Motherboard";
+
+    String resposta5a = "Ram memory";
+    String resposta5b = "Rom memory";
+    String resposta5c = "Cache memory";
+
+
+int valorNivel,vidasCasoRetry,vidas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,170 +63,214 @@ public class Atividade1 extends AppCompatActivity {
         setContentView(R.layout.activity_atividade1);
 
 
+
         Intent intentReceive = getIntent();
         Bundle param = intentReceive.getExtras();
         if (param != null) {
             valorNivel = param.getInt("vidas");
+            btvoltarclidado = param.getInt("voltar");
             vidasCasoRetry = valorNivel;
-            nivel = valorNivel;
+            vidas = valorNivel;
         }
 
+        titulo = findViewById(R.id.txtTitulo);
+        imgVerificar = findViewById(R.id.imgVerificar);
+        imgTitulo = findViewById(R.id.imgTitulo);
+        btOk = findViewById(R.id.botaoOk);
+        opcaoA = findViewById(R.id.opcaoA);
+        opcaoB = findViewById(R.id.opcaoB);
+        opcaoC = findViewById(R.id.opcaoC);
+        radio = findViewById(R.id.grupoRadio);
 
-        botaoOk = (Button) findViewById(R.id.botaoOk);
-        botaoOk.setEnabled(false);
-        textoPergunta = (TextView) findViewById(R.id.txtPistaForca);
-        opcaoA = (RadioButton) findViewById(R.id.opcaoA);
-        opcaoB = (RadioButton) findViewById(R.id.opcaoB);
-        opcaoC = (RadioButton) findViewById(R.id.opcaoC);
-        radioGroup = (RadioGroup) findViewById(R.id.grupoRadio);
-        atualizaPerguntas(botaoOk);
-        final ListView listView;
 
-        // só ativa o botão OK
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        atualizarFormulario();
+
+
+
+        radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.opcaoA:
-                        Log.d("s", "Opcao n1!");
-                        listaRespostas[numeroPergunta - 1] = 1;
+                        imgVerificar.setVisibility(View.VISIBLE);
+                        if(posicaoPergunta == 1 || posicaoPergunta == 5){
+                            respostasCorretas++;
+                            imgVerificar.setImageResource(R.drawable.v);
+                        }else{
+                            vidas--;
+                            imgVerificar.setImageResource(R.drawable.xx);
+                        }
+                        opcaoA.setEnabled(false);
+                        opcaoB.setEnabled(false);
+                        opcaoC.setEnabled(false);
+                        radio.clearCheck();
+                        btOk.setEnabled(true);
                         break;
 
                     case R.id.opcaoB:
-                        Log.d("s", "Opcao n2!");
-                        listaRespostas[numeroPergunta - 1] = 2;
-                        break;
+                        imgVerificar.setVisibility(View.VISIBLE);
+                        if(posicaoPergunta == 2 || posicaoPergunta == 3){
+                            respostasCorretas++;
+                            imgVerificar.setImageResource(R.drawable.v);
+                        }else{
+                            vidas--;
+                            imgVerificar.setImageResource(R.drawable.xx);
+                        }
+                        opcaoA.setEnabled(false);
+                        opcaoB.setEnabled(false);
+                        opcaoC.setEnabled(false);
+                        radio.clearCheck();
+                        btOk.setEnabled(true);
 
+                        break;
                     case R.id.opcaoC:
-                        Log.d("s", "Opcao n3!");
-                        listaRespostas[numeroPergunta - 1] = 3;
+                        imgVerificar.setVisibility(View.VISIBLE);
+                        if(posicaoPergunta == 4 ){
+                            respostasCorretas++;
+                            imgVerificar.setImageResource(R.drawable.v);
+                        }else{
+                            vidas--;
+                            imgVerificar.setImageResource(R.drawable.xx);
+                        }
+                        opcaoA.setEnabled(false);
+                        opcaoB.setEnabled(false);
+                        opcaoC.setEnabled(false);
+                        radio.clearCheck();
+                        btOk.setEnabled(true);
                         break;
                 }
 
-                botaoOk.setEnabled(true);
+                btOk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        atualizarFormulario();
+                        opcaoA.setEnabled(true);
+                        opcaoB.setEnabled(true);
+                        opcaoC.setEnabled(true);
+                        imgVerificar.setVisibility(View.INVISIBLE);
+                        btOk.setEnabled(false);
 
+                    }
+                });
             }
         });
+
+
     }
 
-    public void atualizaPerguntas(View view) {
-        if (numeroPergunta == 0) {
-            ImageView imagemC = (ImageView) findViewById(R.id.imgForca);
-            imagemC.setImageResource(R.drawable.hd);
+    public  void atualizarFormulario(){
+        imgVerificar.setVisibility(View.INVISIBLE);
+
+
+        switch (posicaoPergunta){
+            case 0:
+                imgTitulo.setImageResource(R.drawable.hd);
+                titulo.setText(pergunta1);
+                opcaoA.setText(resposta1a);
+                opcaoB.setText(resposta1b);
+                opcaoC.setText(resposta1c);
+                posicaoPergunta++;
+                break;
+
+            case 1:
+                imgTitulo.setImageResource(R.drawable.monitor);
+                titulo.setText(pergunta1);
+                opcaoA.setText(resposta2a);
+                opcaoB.setText(resposta2b);
+                opcaoC.setText(resposta2c);
+                radio.clearCheck();
+                posicaoPergunta++;
+
+                break;
+
+            case 2:
+                imgTitulo.setImageResource(R.drawable.processador);
+                titulo.setText(pergunta1);
+                opcaoA.setText(resposta3a);
+                opcaoB.setText(resposta3b);
+                opcaoC.setText(resposta3c);
+                posicaoPergunta++;
+                break;
+
+            case 3:
+                imgTitulo.setImageResource(R.drawable.placamae);
+                titulo.setText(pergunta1);
+                opcaoA.setText(resposta4a);
+                opcaoB.setText(resposta4b);
+                opcaoC.setText(resposta4c);
+                posicaoPergunta++;
+                break;
+            case 4:
+                imgTitulo.setImageResource(R.drawable.memoria);
+                titulo.setText(pergunta1);
+                opcaoA.setText(resposta5a);
+                opcaoB.setText(resposta5b);
+                opcaoC.setText(resposta5c);
+                posicaoPergunta++;
+                break;
+            case 5:
+                alertaResultado();
         }
-        if (numeroPergunta == 1) {
-            ImageView imagemC = (ImageView) findViewById(R.id.imgForca);
-            imagemC.setImageResource(R.drawable.monitor);
-        }
-        if (numeroPergunta == 2) {
-            ImageView imagemC = (ImageView) findViewById(R.id.imgForca);
-            imagemC.setImageResource(R.drawable.processador);
-        }
-        if (numeroPergunta == 3) {
-            ImageView imagemC = (ImageView) findViewById(R.id.imgForca);
-            imagemC.setImageResource(R.drawable.placamae);
-        }
-        if (numeroPergunta == 4) {
-            ImageView imagemC = (ImageView) findViewById(R.id.imgForca);
-            imagemC.setImageResource(R.drawable.memoria);
-        }
-        if (numeroPergunta == Perguntas.length) {
-            opcaoA.setEnabled(false);
-            opcaoB.setEnabled(false);
-            opcaoC.setEnabled(false);
-            radioGroup.clearCheck();
-            confereResultado();
-        } else {
-            textoPergunta.setText(Perguntas[numeroPergunta]);
-            opcaoA.setText(OpcaoA[numeroPergunta]);
-            opcaoB.setText(OpcaoB[numeroPergunta]);
-            opcaoC.setText(OpcaoC[numeroPergunta]);
-            numeroPergunta++;
-            botaoOk.setEnabled(false);
-            radioGroup.clearCheck();
-        }
+
     }
 
-    public void confereResultado() {
-        int contadorLista = 0;
 
-
-        for (int numero : listaRespostas) {
-            System.out.println(numero);
-            if (numero == listaGabarito[contadorLista]) {
-                respostasCorretas++;
-
-                System.out.println("Resposta Correta!!!");
-
-            } else {
-
-                erros++;
-                nivel--;
-
-
-            System.out.println("Resposta Errada!!!");
-        }
-        contadorLista++;
-    }
-
-    alertaResultado(botaoOk);
-
-}
-
-
-
-    public void alertaResultado(View view) {
+    public void alertaResultado() {
         AlertDialog alertDialog;
         alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setCancelable(false);
-        alertDialog.setTitle("Resultado!");
-
+        alertDialog.setTitle(getString(R.string.msg_result));
 
         if(respostasCorretas == 5) {
-            alertDialog.setMessage("Voce acertou " + respostasCorretas + " questoes!");
-            alertDialog.setButton("GO NEXT", new DialogInterface.OnClickListener() {
+            alertDialog.setMessage(getString(R.string.msgHits) + respostasCorretas );
+            alertDialog.setButton(getString(R.string.msgNext), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), MapaAtividades2.class);
+                    Intent intent = new Intent(getApplicationContext(), MapaAtividadesGeral.class);
                     intent.putExtra("totalPontos", respostasCorretas);
-                    intent.putExtra("vidas", nivel);
+                    intent.putExtra("vidas", vidas);
+                    intent.putExtra("mapa", mapa);
+                    intent.putExtra("voltar", btvoltarclidado);
 
                     startActivity(intent);
                     finish();
                 }
             });
-        }if(respostasCorretas > 0 && respostasCorretas <= 4){
-            alertDialog.setMessage("Você acertou " + respostasCorretas );
-            alertDialog.setButton(Dialog.BUTTON_NEGATIVE,"Tentar Novamente", new DialogInterface.OnClickListener() {
+        }if(respostasCorretas >= 0 && respostasCorretas <= 4 && vidas >= 0){
+            alertDialog.setMessage(getString(R.string.msgHits)  + respostasCorretas );
+            alertDialog.setButton(Dialog.BUTTON_NEGATIVE,getString(R.string.msgRetry), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Intent intent = new Intent(getApplicationContext(), Atividade1.class);
                     intent.putExtra("vidas", vidasCasoRetry);
+                    intent.putExtra("voltar", btvoltarclidado + 1);
                     respostasCorretas = 0;
                     startActivity(intent);
                     finish();
                 }
             });
 
-            alertDialog.setButton(Dialog.BUTTON_POSITIVE,"Avançar", new DialogInterface.OnClickListener() {
+            alertDialog.setButton(Dialog.BUTTON_POSITIVE,getString(R.string.msgNext), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), MapaAtividades2.class);
+                    Intent intent = new Intent(getApplicationContext(), MapaAtividadesGeral.class);
                     intent.putExtra("totalPontos", respostasCorretas);
-                    intent.putExtra("vidas", nivel);
+                    intent.putExtra("vidas", vidas);
+                    intent.putExtra("mapa", mapa);
+                    intent.putExtra("voltar", btvoltarclidado);
                     startActivity(intent);
                     finish();
                 }
             });
-         }if (nivel < 0) {
-
-            alertDialog.setTitle("='( Você ficou sem vidas!!");
-            alertDialog.setMessage(" Você não tem mais Vidas ");
-            alertDialog.setButton("Tentar Novamente", new DialogInterface.OnClickListener() {
+        }if (vidas < 0) {
+            alertDialog.setTitle(getString(R.string.msgGameOver));
+            alertDialog.setMessage(getString(R.string.msgGamerOL) +vidas);
+            alertDialog.setButton(getString(R.string.msgRetry), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), Atividade1.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("vidas", vidasCasoRetry);
+                    intent.putExtra("mapa", mapa);
                     respostasCorretas = 0;
                     startActivity(intent);
                     finish();
@@ -241,13 +279,37 @@ public class Atividade1 extends AppCompatActivity {
             });
 
         }
-
         alertDialog.show();
-
-        botaoOk.setEnabled(false);
-
+        btOk.setEnabled(false);
     }
 
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog alertDialog;
+        alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setCancelable(false);
+        alertDialog.setTitle(getString(R.string.msgAlerta));
+        alertDialog.setMessage(getString(R.string.msgSair));
+
+        alertDialog.setButton(Dialog.BUTTON_NEGATIVE,getString(R.string.msgNao), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                closeOptionsMenu();
+            }
+        });
+
+        alertDialog.setButton(Dialog.BUTTON_POSITIVE,getString(R.string.msgSim), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        alertDialog.show();
+    }
 }
 
 

@@ -9,9 +9,10 @@ import android.widget.ImageView;
 
 public class MapaAtividades extends AppCompatActivity {
 
-    Button btProsseguir,btEasy,btMedium,btHard;
+    Button btProsseguir,btEasy,btMedium,btHard,btFaq;
     int nivel;
     ImageView totalVidas;
+    int btvoltarclidado = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,13 @@ public class MapaAtividades extends AppCompatActivity {
         btMedium = findViewById(R.id.btMedium);
         btHard = findViewById(R.id.btHard);
         totalVidas = findViewById(R.id.imgQtdVidas);
+        btFaq = findViewById(R.id.btFaq);
 
         btEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nivel = 4;
-                totalVidas.setImageResource(R.drawable.quatro);
+                nivel = 6;
+                totalVidas.setImageResource(R.drawable.seiscoracoes);
                 btEasy.setVisibility(View.GONE);
                 btHard.setVisibility(View.GONE);
                 btMedium.setVisibility(View.GONE);
@@ -37,8 +39,8 @@ public class MapaAtividades extends AppCompatActivity {
         btMedium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nivel = 3;
-                totalVidas.setImageResource(R.drawable.tresvidas);
+                nivel = 4;
+                totalVidas.setImageResource(R.drawable.quatro);
                 btEasy.setVisibility(View.GONE);
                 btHard.setVisibility(View.GONE);
                 btMedium.setVisibility(View.GONE);
@@ -64,6 +66,15 @@ public class MapaAtividades extends AppCompatActivity {
                 intent.putExtra("vidas", nivel);
                 startActivity(intent);
                 finish();
+
+            }
+        });
+
+        btFaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Faq.class);
+                startActivity(intent);
 
             }
         });

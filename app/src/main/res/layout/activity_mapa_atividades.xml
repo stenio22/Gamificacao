@@ -11,24 +11,26 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/cor_fundo_rosa"
+        android:contentDescription="@string/img_mapinha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525"
-        app:srcCompat="@drawable/mapinha" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/mapinha22" />
 
     <ImageView
         android:id="@+id/imgBoneco"
-        android:layout_width="128dp"
-        android:layout_height="135dp"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/imagem_robo_mapa"
         app:layout_constraintBottom_toBottomOf="@+id/imgMap"
         app:layout_constraintEnd_toEndOf="@+id/imgMap"
-        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="@+id/imgMap"
         app:layout_constraintTop_toTopOf="@+id/imgMap"
-        app:layout_constraintVertical_bias="0.224"
+        app:layout_constraintVertical_bias="0.254"
         app:srcCompat="@drawable/robo1" />
 
     <Button
@@ -37,15 +39,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="36dp"
         android:background="@color/statusBarRoxo"
         android:fontFamily="@font/londrina_solid"
-        android:text="Continuar"
+        android:text="@string/botao_proximo"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -55,7 +58,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/londrina_solid"
-        android:text="Mapa de Progresso"
+        android:text="@string/titulo_mapa_progresso"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,46 +70,67 @@
         android:id="@+id/btEasy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="452dp"
         android:background="@color/cor_fundo_rosa"
         android:fontFamily="@font/londrina_solid"
-        android:text="Easy"
+        android:text="@string/bt_facil"
         android:textAllCaps="true"
         android:textColor="@color/statusBarRoxo"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="@color/cor_fundo_rosa"
         android:fontFamily="@font/londrina_solid"
-        android:text="medium"
+        android:text="@string/bt_medio"
         android:textAllCaps="true"
         android:textColor="@color/statusBarRoxo"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btEasy" />
 
     <Button
         android:id="@+id/btHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="@color/cor_fundo_rosa"
         android:fontFamily="@font/londrina_solid"
-        android:text="hard"
+        android:text="@string/bt_dificil"
         android:textAllCaps="true"
         android:textColor="@color/statusBarRoxo"
         android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMedium" />
+
+    <Button
+        android:id="@+id/btFaq"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="208dp"
+        android:background="@color/cor_fundo_rosa"
+        android:fontFamily="@font/londrina_solid"
+        android:text="FAQ"
+        android:textAllCaps="true"
+        android:textColor="@color/statusBarRoxo"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btProsseguir"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.951" />
 
     <ImageView
         android:id="@+id/imgQtdVidas"
@@ -114,6 +138,18 @@
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:contentDescription="@string/img_qtd_vidas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="344dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

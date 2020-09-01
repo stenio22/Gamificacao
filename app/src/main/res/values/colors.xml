@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="statusBarRoxo">#8a1577</color>
-    <color name="fundo_final">#deddaf</color>
+    <color name="fundo_final">#DEDDAF</color>
     <color name="cor_fundo_rosa">#e78eea</color>
     <color name="cor_mapa">#a63353</color>
 </resources>

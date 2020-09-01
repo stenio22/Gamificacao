@@ -355,7 +355,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TextView
-        android:id="@+id/txtPistaForca"
+        android:id="@+id/txtTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -370,7 +370,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgForca"
+        android:id="@+id/imgTitulo"
         android:layout_width="120pt"
         android:layout_height="105dp"
         android:layout_marginStart="8dp"
@@ -379,7 +379,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPistaForca"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
         app:srcCompat="@drawable/forca1" />
 
     <android.support.constraint.Guideline
@@ -425,7 +425,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t2"
@@ -435,7 +435,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t1"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t3"
@@ -445,7 +445,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t2"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t4"
@@ -455,7 +455,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t3"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t5"
@@ -465,7 +465,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t4"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t6"
@@ -475,7 +475,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t5"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t7"
@@ -485,7 +485,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t6"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t8"
@@ -495,7 +495,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t9"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t7"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t9"
@@ -505,7 +505,7 @@
         app:layout_constraintEnd_toStartOf="@+id/t10"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t8"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
     <TextView
         android:id="@+id/t10"
@@ -515,7 +515,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t9"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca" />
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
 
 </android.support.constraint.ConstraintLayout>

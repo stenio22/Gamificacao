@@ -18,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@+id/botaoOk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgForca">
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo">
 
         <RadioButton
             android:id="@+id/opcaoA"
@@ -58,7 +58,6 @@
         android:layout_weight="1"
         android:background="@color/statusBarRoxo"
         android:fontFamily="@font/londrina_solid"
-        android:onClick="atualizaPerguntas"
         android:text="Ok"
         android:textColor="@android:color/white"
         android:textSize="30sp"
@@ -67,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtPistaForca"
+        android:id="@+id/txtTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -82,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgForca"
+        android:id="@+id/imgTitulo"
         android:layout_width="120pt"
         android:layout_height="120pt"
         android:layout_marginStart="8dp"
@@ -90,7 +89,17 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPistaForca"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
         app:srcCompat="@drawable/img1" />
+
+    <ImageView
+        android:id="@+id/imgVerificar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/grupoRadio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgTitulo" />
 
 </android.support.constraint.ConstraintLayout>
